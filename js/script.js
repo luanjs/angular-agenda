@@ -1,4 +1,4 @@
-var app = angular.module("contatos", ['notification']);
+var app = angular.module("contatos", ['notification','ngRoute']);
 
 /*app.service('noti', function() {
 
@@ -40,6 +40,31 @@ var app = angular.module("contatos", ['notification']);
     }
 
 });*/
+
+
+app.directive("uiContato",function(){
+    return {
+        templateUrl: "view/ui-contato.html",
+        restrict: "E"
+    }
+})
+
+app.directive("uiNote",function(){
+    return {
+        templateUrl: "view/ui-note.html",
+        restrict: "E"
+    }
+})
+
+
+app.directive("adcContato",function(){
+    return {
+        templateUrl: "view/adc-contato.html",
+        restrict: "E"
+    }
+})
+
+
 
 app.controller("ctrl_contatos", function($scope, $timeout, $notification, $log) {
   //$scope.n = $notification;
@@ -129,4 +154,32 @@ app.controller("ctrl_contatos", function($scope, $timeout, $notification, $log) 
         $scope.mostarTelaContato = false;
     }
 
+    $scope.mudaCorAba = function($event, cor) {
+        if(cor == 'contato'){
+          angular.element(document.querySelector(".aba-contatos")).addClass("aba-ativa");
+
+          angular.element(document.querySelector(".aba-anotacoes")).removeClass("aba-ativa");
+        }else{
+          angular.element(document.querySelector(".aba-anotacoes")).addClass("aba-ativa");
+
+          angular.element(document.querySelector(".aba-contatos")).removeClass("aba-ativa");
+        }
+    }
+
+})
+
+app.config(function($routeProvider){
+    $routeProvider.when("/",{
+        templateUrl: "view/contatos.html"
+    })
+
+    .when("/contatos",{
+        templateUrl: "view/contatos.html"
+    })
+
+    .when("/anotacoes",{
+        templateUrl: "view/anotacoes.html"
+    });
+
+    $routeProvider.otherwise({redirect: "/index.html" })
 })

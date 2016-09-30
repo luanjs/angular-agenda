@@ -13,6 +13,18 @@ body {
     border: 1px solid black;
 }
 
+.icons-group{
+    padding: 0;
+}
+
+.aba-ativa{
+  border: 1px solid white;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+
+
 .side-bar {
     display: block;
     position: relative;
@@ -26,15 +38,63 @@ body {
 
 .contatos {
     display: block;
-    height: 100vh;
-    padding: 20px 0px;
+    height: calc(100vh - 50px);
+    padding: 0px 0px;
     z-index: 100;
     background-image: linear-gradient(to bottom, white, #999);
     z-index: 0;
     overflow: auto;
 }
 
+.anotacoes {
+    display: block;
+    height: calc(100vh - 50px);
+    padding: 0px 0px;
+    z-index: 100;
+    background-image: linear-gradient(to bottom, white, #999);
+    z-index: 0;
+    overflow: auto;
+}
+
+.nav-menu{
+    height: 50px;
+    background: #212121;
+    color: white;
+}
+
+.aba{
+
+    height: 100%;
+    text-align: center;
+}
+
+
+
+.aba > span{
+
+    margin-top: 15px;
+    font-size: 30px;
+    text-shadow: 0 0 1px white;
+    position: relative;
+    top: 15%;
+      text-decoration: none;
+     color: white;
+    transform: translateY(-50%);
+}
+
+.aba-contatos{
+    border-right: 1px solid white;
+}
+
+
 .contato {
+    background-color: #212121;
+    color: white;
+    padding: 0;
+    border: 1px solid #DDD;
+}
+
+.note {
     background-color: #212121;
     color: white;
     padding: 0;
@@ -120,6 +180,7 @@ body {
     height: 300px;
     margin: 0 auto;
 }
+
 
 .icons:hover {
     transform: scale(1.05, 1.05);

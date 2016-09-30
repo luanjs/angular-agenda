@@ -1,0 +1,6 @@
+<li data-contato="contato-{{note.id}}"  class="list-group-item col-md-4 note"  ng-repeat="note in contatos |filter:pesquisa | orderBy:'nome'">
+		<div class=" info-contato col-md-10">
+			<h2 class="col-md-6">Nome:{{note.nome}}</h2>
+	</div>
+	<div class="excluir-contato" ng-show="mostrarExcluir" ng-click="apagaContato($event, contato.id);">X</div>
+</li>

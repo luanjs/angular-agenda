@@ -1,0 +1,10 @@
+<li data-contato="contato-{{contato.id}}"  class="list-group-item col-md-12 contato" ng-class="sumir" ng-style="{display:none}" ng-mouseenter="estilo = {width:'100px'}" ng-mouseleave="estilo ={width:'0'}" ng-repeat="contato in contatos |filter:pesquisa | orderBy:'nome'">
+	<div ng-style="estilo" class=" img-contato col-md-2"></div>
+		<div class=" info-contato col-md-10">
+			<h2 class="col-md-6">Nome:
+			    {{contato.nome}}</h2>
+			<h2 class="col-md-6" ng-pattern="/^[\u0030-\u0039]+$/">Nº:
+			    {{contato.numero}}</h2>
+	</div>
+	<div class="excluir-contato" ng-show="mostrarExcluir" ng-click="apagaContato($event, contato.id);">X</div>
+</li>

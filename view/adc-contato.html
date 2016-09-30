@@ -1,0 +1,26 @@
+<div class="adicionar-contato col-md-12" ng-show="mostarTelaContato">
+                <div class="adicionar-contato-box">
+                    <div class="dados center">
+                        <h2>Adicionar Contato</h2>
+                        <form class=""  name="novoContatoForm" action="index.html" method="post" novalidate>
+                            <div class="input-group col-md-8 col-md-offset-2 input-in">
+                                <span class="input-group-addon" id="basic-addon1">Nome</span>
+                                <input type="text" class="form-control" name="nome"  ng-minlength="3" ng-model="novoContato.nome" placeholder="Nome"  required>
+                            </div>
+
+                            <div class="input-group col-md-8 col-md-offset-2 input-in">
+                                <span class="input-group-addon" id="basic-addon1">Numero</span>
+                                <input type="tel"  ng-maxlength="10" name="numero" ng-minlength="5" class="form-control" ng-model="novoContato.numero" placeholder="Numero" required>
+
+                            </div>
+
+                            <button type="button" ng-submit="adicionarContato(novoContato)" ng-disabled="novoContatoForm.$invalid" ng-click="adicionarContato(novoContato)" class="btn btn-default btn-lg">
+                                Adicionar
+                            </button>
+                        </form>
+
+                    </div>
+
+                    <div class="excluir-contato" ng-show="true;" ng-click="mostarTelaContato = false">X</div>
+                </div>
+            </div>
